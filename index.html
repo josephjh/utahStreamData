@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="./staticData.js"></script>
+    <script type="module" src="./index.js">
+    </script>
+    <form onsubmit="handleSiteCodeFormSubmit(event)">
+        <select id="drop-down" name="sitenumber">
+        </select>
+        <button type="submit">Button</button>
+    </form>
+    <h1 id="gauge-height">
+    </h1>
+    <h1 id="discharge-rate">
+    </h1>
+    <script>
+        const dropDownEle = document.querySelector("#drop-down")
+        riverData.forEach((river) => {
+            const option = document.createElement("option")
+            option.value = river.riverCode
+            option.innerText = river.riverName
+            dropDownEle.append(option)
+        })
+    </script>
+</body>
+</html>
